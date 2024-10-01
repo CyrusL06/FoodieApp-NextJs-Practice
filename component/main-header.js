@@ -1,17 +1,16 @@
 import Link from "next/link";
 // @ = root directory
 import logoImg from "@/assets/logo.png";
-//special way of importing CSS but u gonna use tailwind
 import classes from "./main-header.module.css";
+import Image from "next/image";
 
 export default function MainHeader() {
   return (
     <header className={classes.header}>
-      {/* We need a clickable Logo to take back in home*/}
-      {/* we access this classes👇 object  */}
       <Link className={classes.logo} href="/">
-        {/* In next u have to pass it as ".src" */}
-        <img src={logoImg.src} alt="A plate with food on it" />
+        {/* In next u can optimize Img default elemnt it displays and optimize it  */}
+        {/* ADDS priority since it will always be visible when loaded */}
+        <Image src={logoImg} alt="A plate with food on it" priority />
         NextLevel Food
       </Link>
       {/* navigation elemnt */}
