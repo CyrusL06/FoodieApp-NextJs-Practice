@@ -1,8 +1,13 @@
-import './globals.css';
+//Layouts job is to act as a wrapper for the App
+//and you can also have nested layout
+//this layout is visible for every single page in the web
+
+import "./globals.css";
+import MainHeader from "@/component/main-header";
 
 export const metadata = {
-  title: 'NextLevel Food',
-  description: 'Delicious meals, shared by a food-loving community.',
+  title: "NextLevel Food",
+  description: "Delicious meals, shared by a food-loving community.",
 };
 
 export default function RootLayout({ children }) {
@@ -15,11 +20,11 @@ export default function RootLayout({ children }) {
               <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop
                   offset="0%"
-                  style={{ stopColor: '#59453c', stopOpacity: '1' }}
+                  style={{ stopColor: "#59453c", stopOpacity: "1" }}
                 />
                 <stop
                   offset="100%"
-                  style={{ stopColor: '#8f3a09', stopOpacity: '1' }}
+                  style={{ stopColor: "#8f3a09", stopOpacity: "1" }}
                 />
               </linearGradient>
             </defs>
@@ -30,6 +35,7 @@ export default function RootLayout({ children }) {
           </svg>
         </div>
 
+        <MainHeader />
         {children}
       </body>
     </html>
