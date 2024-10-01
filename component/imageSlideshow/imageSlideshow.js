@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
@@ -8,7 +10,7 @@ import macncheeseImg from "@/assets/macncheese.jpg";
 import pizzaImg from "@/assets/pizza.jpg";
 import schnitzelImg from "@/assets/schnitzel.jpg";
 import tomatoSaladImg from "@/assets/tomato-salad.jpg";
-import classes from "./imageSlideshow.module.css";
+import classes from "./imageSlides.module.css";
 
 const images = [
   { image: burgerImg, alt: "A delicious, juicy burger" },
