@@ -1,5 +1,6 @@
 import Link from "next/link";
 import style from "./pageDesign.module.css";
+import ImageSlideshow from "@/component/imageSlideshow/imageSlideshow";
 
 export default function Home() {
   return (
@@ -10,6 +11,11 @@ export default function Home() {
         <div>
           <div>
             <div className={style.hero}>
+              {/* ⚠️Error appears */}
+              {/* ou're importing a component that needs useState.
+               It only works in a Client Component but none of its parents are marked with 
+               "use client" */}
+              <ImageSlideshow />
               <h1>NextLevel Food for NextLevel Foodies</h1>
               <p>Taste & share food from all over the world</p>
             </div>
