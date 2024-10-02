@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 // @ = root directory
 import logoImg from "@/assets/logo.png";
