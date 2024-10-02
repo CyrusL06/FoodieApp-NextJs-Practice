@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import styles from "./mealsPage.module.css";
+// The error was cased by this bruh
 import MealsGrid from "@/component/meals/mealsGrid";
 import { getMeals } from "../../lib/meals";
 
