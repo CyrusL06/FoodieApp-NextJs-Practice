@@ -4,20 +4,21 @@ import styles from "./mealsPage.module.css";
 // The error was cased by this bruh
 import MealsGrid from "@/component/meals/mealsGrid";
 import { getMeals } from "../../lib/meals";
+// Allows you to handle loading state or fallback until resource shows
+import { Suspense } from "react";
 
-// Async/Await =              Async = makes a function return a promise
-//                            Await = makes an async function wait for a promise
 
-export default async function MealsPage() {
-  // When it comes to load data we could 
-  //On react we would normally use useEffect Tool and use fetch function 
-  // to a back and reach the data from there
-
-  //but since we have backend with nextJs we   dont need that.
-  // To make it cleaner were gonna add components
-
-  // And we can get back our meals here
+// async when its server component
+// seperated data fetching
+async function Meals(){
   const meals = await getMeals();
+
+  // Returns meals when the load is done
+  return <MealsGrid meals={meals} />;
+
+
+}
+export default async function MealsPage() {
 
   return (
     <>
@@ -33,8 +34,12 @@ export default async function MealsPage() {
       </header>
 
       <main className={styles.main}>
-        {/* now we can use meals to parse it */}
-        <MealsGrid meals={meals} />
+        {/* Suspense is */}
+        {/* Write you want them to see while its loading */}
+      <Suspense fallback={<p className={styles.loading}>Fetching Meals...</p>}>
+        {/* Function get calls here */}
+        <Meals/>
+      </Suspense>
       </main>
     </>
   );
