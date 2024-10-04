@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "./slugs.module.css"
 import { getMeal } from "@/lib/meals";
 import { notFound } from "next/navigation";
+
 // we add params because it can take the concrete value at the end of url 
 // because nextjs pass some special prop and every component will receive a sepcial parent props
 export default function MealDetailsPage({params}) {

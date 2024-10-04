@@ -7,6 +7,11 @@ import { getMeals } from "../../lib/meals";
 // Allows you to handle loading state or fallback until resource shows
 import { Suspense } from "react";
 
+export const metadata = {
+  title: "All Meals",
+  description: "Delicious meals, shared by a food-loving community.",
+};
+
 
 // async when its server component
 // seperated data fetching
