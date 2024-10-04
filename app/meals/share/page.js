@@ -3,7 +3,7 @@
 import classes from './page.module.css';
 import ImagePicker from '@/component/meals/meals-picker/page';
 // because we cant have use serve inside use client we import it from antoher page
-import shareMeal from '@/lib/shareMealDataInput'
+import {shareMeal} from '@/lib/shareMealDataInput'
 
 export default function ShareMealPage() {
 
