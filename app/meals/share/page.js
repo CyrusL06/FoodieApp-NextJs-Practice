@@ -1,11 +1,15 @@
-'use client'
 
 import classes from './page.module.css';
 import ImagePicker from '@/component/meals/meals-picker/page';
 // because we cant have use serve inside use client we import it from antoher page
 import {shareMeal} from '@/lib/shareMealDataInput'
+import MealsFormSubmit from './mealsFormSubmit'
 
 export default function ShareMealPage() {
+
+
+
+
 
   return (
     <>
@@ -49,9 +53,10 @@ export default function ShareMealPage() {
           </p>
          <ImagePicker label="Your Image" name="image" />
           <p className={classes.actions}>
-            <button type="submit">Share Meal</button>
+            <MealsFormSubmit/>
           </p>
         </form>
+
       </main>
     </>
   );
