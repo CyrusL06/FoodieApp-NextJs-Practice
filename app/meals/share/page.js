@@ -1,15 +1,21 @@
+'use client'
 
 import classes from './page.module.css';
 import ImagePicker from '@/component/meals/meals-picker/page';
 // because we cant have use serve inside use client we import it from antoher page
 import {shareMeal} from '@/lib/shareMealDataInput'
 import MealsFormSubmit from './mealsFormSubmit'
+// import { useActionState } from 'react';
+import { useFormState } from 'react-dom';
 
 export default function ShareMealPage() {
+  // responsible for managing state of this component 
+  // wich uses form that will submit with help of server side
+ const [formAction, setformAction] = useFormState(shareMeal, {message: null});
+  //it needs two argument ({serverAction}, {initialState}) what should be return before when no response is received
 
 
-
-
+  
 
   return (
     <>
@@ -22,7 +28,7 @@ export default function ShareMealPage() {
       <main className={classes.main}>
         {/* FORM */}
         {/* this is how we submit form */}
-        <form className={classes.form} action={shareMeal}>
+        <form className={classes.form} action={setformAction}>
           <div className={classes.row}>
             <p>
               <label htmlFor="name">Your name</label>
@@ -52,6 +58,7 @@ export default function ShareMealPage() {
             ></textarea>
           </p>
          <ImagePicker label="Your Image" name="image" />
+         {formAction.message && <p>{formAction.message}</p>}
           <p className={classes.actions}>
             <MealsFormSubmit/>
           </p>

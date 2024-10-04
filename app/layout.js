@@ -4,6 +4,7 @@
 
 import "./globals.css";
 import MainHeader from "@/component/mainHeader/main-header";
+//MetaDATA
 export const metadata = {
   title: "NextLevel Food",
   description: "Delicious meals, shared by a food-loving community.",
